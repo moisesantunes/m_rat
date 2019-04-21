@@ -1,4 +1,3 @@
-
 <template>
 	<v-app id="inspire"> 
 		<v-navigation-drawer fixed v-model="drawer" app> 
@@ -15,16 +14,19 @@
 					<v-list-tile>
 						<v-list-tile-action>
 							<v-icon>contact_mail</v-icon> 
-						</v-list-tile-action>
-						<v-list-tile-content>Contact</v-list-tile-content> 
+						 </v-list-tile-action>
+						<v-list-tile-content>Contact</v-list-tile-content>
 					</v-list-tile> 
 				</router-link> 
 			</v-list>
-		</v-navigation-drawer> 
+		</v-navigation-drawer>
 		<v-toolbar color="indigo" dark fixed app> 
-			<v-toolbar-side-icon @click.stop="drawer = !drawer">
-			</v-toolbar-side-icon>
+			<v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 			<v-toolbar-title>Home</v-toolbar-title> 
+			<v-spacer> </v-spacer>
+			<v-toolbar-items class="hidden-sm-and-down">
+				<v-btn flat v-bind:to="{ name: 'AddMovie' }">Add Movie</v-btn> 
+			</v-toolbar-items> 
 		</v-toolbar> 
 		<v-content>
 			<v-container fluid> 
@@ -34,17 +36,19 @@
 			</v-container> 
 		</v-content>
 		<v-footer color="indigo" app>
-			<span class="white--text">&copy; 2019</span> 
+			<span class="white--text">&copy; 2018</span> 
 		</v-footer> 
-	</v-app>
+	</v-app> 
 </template>
-
 
 <script> 
 	import './assets/stylesheets/main.css';
 	export default { 
-		data: () => ({ drawer: null,
+		data: () => ({ 
+			drawer: null,
 		}), 
-	props: { source: String, }, 
-	}; 
-</script>
+		props: { 
+			source: String,
+		}, 
+	};
+ </script>
